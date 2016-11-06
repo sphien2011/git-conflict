@@ -185,7 +185,7 @@ public class ContactFilter {
         String type = ContactsContract.CommonDataKinds.Phone.TYPE;
 
         ContentResolver contentResolver = mContext.getContentResolver();
-        mCursor = contentResolver.query(contactUri, null, null, null, null);
+        mCursor = contentResolver.query(contactUri, null, null, null, ContactsContract.Contacts.SORT_KEY_PRIMARY + " ASC");
 
         if (mCursor.getCount() > 0) {
             while (mCursor.moveToNext()) {
